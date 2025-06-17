@@ -14,8 +14,19 @@ def guessing_game(ans):
     cnt = 1
 
     while cnt <= 10:
-        i = input("Enter your guess from {} to {}: ".format(begin, end))
-        num = int(i)
+        try:
+            i = input("Enter your guess from {} to {}: ".format(begin, end))
+            num = int(i)
+        except ValueError:
+            print("Please input a number")
+            continue
+        except:
+            print("Occur some input error")
+            break
+
+        if not (begin <= num <= end):
+            print("Please input a range of number")
+            continue
 
         if num != ans:
             print("Wrong! Guess count: {}".format(cnt))
