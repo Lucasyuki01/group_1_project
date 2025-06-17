@@ -1,1 +1,0 @@
-This is the readme of our project about git and github
